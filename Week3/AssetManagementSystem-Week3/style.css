@@ -1,0 +1,17 @@
+label {
+	color: white;
+	text-transform: uppercase;
+}
+button {
+	text-transform: uppercase;
+}
+.hiddenTable {
+	visibility: hidden;
+}
+.indexClass {
+	font-weight: bolder;
+	text-align: center;
+}
+.xyz {
+	font-size: larger;
+}
