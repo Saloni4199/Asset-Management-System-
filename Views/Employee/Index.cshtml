@@ -1,0 +1,36 @@
+@model IEnumerable<mvcProject.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+@using mvcProject.Models;
+
+<h2>Employee List</h2>
+
+@Html.ActionLink("Create New Employee","Create")
+
+<table style="border :2 ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+      
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit","Edit",new{id = item.Id}) |
+                @Html.ActionLink("Delete","Delete", new { id = item.Id})
+                @Html.ActionLink("Details","Details",item)
+            </td>
+        </tr>
+    }
+</table>
