@@ -1,0 +1,34 @@
+@model  mvcProject.Models.Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+@Html.ActionLink("Create New Employee","Create")
+
+<h2>Employee Details</h2>
+<table>
+    <tr>
+    <th>Employee Property</th>
+    <th>   </th>
+    <th>Employee Details</th>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td>@Model.Gender</td>
+    </tr>
+    <tr>
+        <td>EMployee Id</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td>City</td>
+        <td>@Model.City</td>
+    </tr>
+</table>
+
+@Html.ActionLink("Back to List","Index")

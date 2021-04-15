@@ -1,0 +1,50 @@
+@model  mvcProject.Models.Employee
+
+@{
+    ViewData["Title"] = "Create Employee ";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()){
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.Name)
+        </div>
+
+        <div class = "editor-label">
+            @Html.EditorFor(Model => Model.Name)
+            @Html.ValidationMessageFor(Model => Model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.Gender)
+        </div>
+
+        <div class="editor-label">
+            @Html.DropDownList("Gender", new List<SelectListItem>{
+                new SelectListItem { Text = "Male" , Value="Male"},
+                new SelectListItem { Text = "Female" , Value = "Female"} }, "Select Gender");
+        </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(Model => Model.City)
+        </div>
+
+        <div class = "editor-label">
+            @Html.EditorFor(Model => Model.City)
+            @Html.ValidationMessageFor(Model => Model.City)
+        </div>
+
+        <p></p>
+
+        <p>
+            <input type="submit" value="Create">
+        </p>
+    </fieldset>
+}
